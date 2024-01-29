@@ -2,5 +2,19 @@
 label.xng-breadcrumb-trail {
     color: orange;
 }
+
+button.primary:disabled {
+    button[disabled]{
+        background-color: #000000;
+        color: black;
+    }
+}
+
+
+button.btn:disabled {
+    
+    opacity: 0.3;
+}
+
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+//@import 'bootstrap/scss/bootstrap';
