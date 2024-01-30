@@ -21,7 +21,9 @@ namespace API.Extensions
                 var options = ConfigurationOptions.Parse(config.GetConnectionString("Redis"));
                 return ConnectionMultiplexer.Connect(options);
             });
+            services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IBasketRepository, BasketRepository>(); // Repositories are scoped to stay alive only during html request
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
