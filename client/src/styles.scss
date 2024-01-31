@@ -16,5 +16,9 @@ button.btn:disabled {
     opacity: 0.3;
 }
 
+input[type=radio].form-check-input {
+    border-color: #000000;
+}
+
 /* Importing Bootstrap SCSS file. */
 //@import 'bootstrap/scss/bootstrap';
