@@ -4,9 +4,9 @@
             <div class="d-grid">
                 <button 
                     class="nav-link py-3 text-uppercase fw-bold"
+                    [disabled]="true"
                     [class.active]="selectedIndex === i"
-                    (click)="onClick(i)"
-                >
+                    (click)="onClick(i)">
                     {{step.label}}
                 </button>
             </div>

@@ -6,9 +6,9 @@ namespace Core.Entities.OrderAggregate
     {
         [EnumMember(Value = "Pending")] // Force enum to return string "Pending" rather than 0
         Pending,
-        [EnumMember(Value = "PaymentRecieved")]
+        [EnumMember(Value = "Payment Recieved")]
         PaymentRecieved,
-        [EnumMember(Value = "PaymentFailed")]
+        [EnumMember(Value = "Payment Failed")]
         PaymentFailed
     }
 }
