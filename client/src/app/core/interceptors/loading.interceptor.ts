@@ -5,8 +5,9 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { Observable, delay, finalize } from 'rxjs';
+import { Observable, delay, finalize, identity } from 'rxjs';
 import { BusyService } from '../services/busy.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {
@@ -23,7 +24,7 @@ export class LoadingInterceptor implements HttpInterceptor {
 
     this.busyService.busy();
     return next.handle(request).pipe(
-      delay(400),
+      (environment.production ? identity :  delay(400)), // Identity is a function that does nothing
       finalize(() => this.busyService.idle())
     );
   }
